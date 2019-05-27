@@ -70,7 +70,7 @@ public class SingleThreadCopy implements Runnable {
 		}
 		for (int i = this.begin; i < this.end; i++) {
 			fileName = fileList[i].getName();
-			System.out.println(fileList[i].getName());
+			//System.out.println(fileList[i].getName());
 			File outFile = new File(outPathStr + fileName);
 			copyFile(fileList[i], outFile);
 		} 
@@ -87,19 +87,7 @@ public class SingleThreadCopy implements Runnable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("Coping");
-		while (thr.isAlive()==false) {
-		try {
-			thr.sleep(100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		
 		}
-			System.out.print("*");
-			
-		}
-		System.out.println("Copy finished");
-
-	}
 
 }
